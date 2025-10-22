@@ -1,0 +1,94 @@
+:root {
+  --main-font: normal 11px Verdana, sans-serif;
+  
+  /* Light theme variables */
+  --light-bg: #fff;
+  --light-text: #333;
+  --light-sidebar: #f5f5f5;
+  --light-border: #ddd;
+  --light-button: #fff;
+  --light-button-hover: #f0f0f0;
+  
+  /* Dark theme variables */
+  --dark-bg: #000000;
+  --dark-secondary-bg: #121212;
+  --dark-tertiary-bg: #1e1e1e;
+  --dark-text: #ffffff;
+  --dark-secondary-text: #cccccc;
+  --dark-border: #333333;
+  --dark-button: #2a2a2a;
+  --dark-button-hover: #3a3a3a;
+  --dark-highlight: #2d2d2d;
+  --dark-accent: #404040;
+}
+
+:global html,
+:global body,
+:global #app {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+}
+
+:global body.resizing {
+  user-select: none !important;
+}
+
+:global body.resizing * {
+  pointer-events: none;
+}
+
+:global body.resizing.col {
+  cursor: col-resize !important;
+}
+
+/* Dark mode styles */
+:global body.dark-mode {
+  background: #111;
+  color: #eee;
+}
+
+:global body.dark-mode #app,
+:global body.dark-mode .container,
+:global body.dark-mode .sidebarGroup,
+:global body.dark-mode .content {
+  background: #111 !important;
+  color: #eee !important;
+}
+
+:global body.dark-mode button,
+:global body.dark-mode .Button {
+  background: #222 !important;
+  color: #eee !important;
+  border-color: #444 !important;
+}
+
+:global body.dark-mode input,
+:global body.dark-mode .Checkbox,
+:global body.dark-mode .Dropdown {
+  background: #222 !important;
+  color: #eee !important;
+  border-color: #444 !important;
+}
+
+:global body.dark-mode .Icon {
+  fill: #eee !important;
+}
+
+:global body.dark-mode .Treemap {
+  background: #181818 !important;
+}
+
+:global body.dark-mode .Tooltip {
+  background: #222 !important;
+  color: #eee !important;
+  border-color: #444 !important;
+}
+
+/* Smooth transition for theme toggle */
+:global body,
+:global body * {
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
