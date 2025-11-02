@@ -226,22 +226,16 @@
 :global body.dark-mode *:not(svg):not(path):not(circle):not(rect):not(polygon) {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, fill 0.3s ease;
 }
-/* Make icons visible in dark mode */
+/* Remove filter from background-image icons 
+// Note: Icon component uses background-image CSS, not inline SVG elements */
 :global(body.dark-mode) .Icon,
-:global(body.dark-mode) i[class*="icon"] {
-  filter: invert(1) brightness(1.2) !important;
-  opacity: 1 !important;
-}
-
-/* Keep active icons (like pin) visually distinct */
+:global(body.dark-mode) i[class="icon"],
+:global(body.dark-mode) .Button .Icon,
+:global(body.dark-mode) button .Icon,
 :global(body.dark-mode) .Button.active .Icon,
-:global(body.dark-mode) button.active .Icon {
-  filter: invert(0) brightness(0.7) !important; /* darker version */
-}
-
-/* Optional: add hover glow for better feedback */
+:global(body.dark-mode) button.active .Icon,
 :global(body.dark-mode) .Button:hover .Icon,
 :global(body.dark-mode) button:hover .Icon {
-  filter: invert(1) brightness(1.5) !important;
+  filter: none !important;
+  opacity: 1 !important;
 }
-
